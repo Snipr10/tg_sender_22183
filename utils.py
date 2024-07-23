@@ -49,11 +49,8 @@ def get_posts(session, from_, to_):
         "to": to_.strftime("%Y-%m-%d %H:%M:%S"),
         "limit": POSTS_LIMIT,
 
-        "filter": {
-
-            "referenceFilter": referenceFilter,
-            "repostoption": "whatever"
-        }
+        "sort": {"type": "date", "order": "desc", "name": "dateDown"},
+        "filter": {"network_id": ["1", "2", "3", "5", "7", "8", "10", "4"], "repostoption": "whatever"}
     })
     try:
         print(f"response.json() {response.json()}")

@@ -56,6 +56,8 @@ def get_posts(session, from_, to_):
         }
     })
     try:
+        print(f"response.json() {response.json()}")
+
         return response.json()
     except Exception as e:
         logging.error(f"Unable to get posts {e}")
